@@ -1,0 +1,719 @@
+@import "compass/css3"
+
+@mixin perspective($amount)
+  -webkit-perspective: $amount
+  perspective: $amount
+
+@mixin backface-visibility($type)
+  -webkit-backface-visibility: $type
+  backface-visibility: $type
+
+// LEATHERS
+$black: #262726
+$grey: #bbbbbb
+$red: #a4111a
+$brown: #7b3a2a
+
+// GILDINGS
+$black: #2e2e2e
+$copper: #c0884d
+$silver: #bababa
+$natural: #d7d7d7
+
+// PAGES
+$page: 2.4px // single page thickness
+$pages: $page * 35 // how many pages?
+
+// BASE SIZING
+$overhang: 5px // how much covers overhang pages
+$page_corner: 2px // the rounded-ness of the cover corners
+$cover_text_margin: 43.7px
+
+#front_face
+  z-index: 5
+#left_face, #top_face, #bottom_face
+  z-index: 4
+#back_face, #right_face
+  z-index: 3
+#bottom_shadow
+  z-index: 2
+
+#front_face, #right_face, #left_face, #top_face, #bottom_face, #bottom_shadow //, #back_face
+  +transform-style(preserve-3d)
+  +transform(translateZ(0))
+  +perspective(1000)
+#top_face, #right_face, #bottom_face, #left_face
+  +backface-visibility(hidden)
+#bottom_shadow
+  +box-shadow(0 -5px 50px 25px rgba(0,0,0,0.4))
+  +backface-visibility(visible)
+
+
+
+//////// DEFAULT SIZING & STYLING //////////
+
+
+#back_face
+  border-top-left-radius: $page_corner !important
+  border-bottom-left-radius: $page_corner !important
+  text-align: center
+  .studio_stamping_logo
+    img
+      position: absolute
+      bottom: 30px
+      left: 30%
+      opacity: 0.8
+      max-width: 100%
+      max-height: 100%
+
+#front_face
+  border-top-right-radius: $page_corner !important
+  border-bottom-right-radius: $page_corner !important
+  #cover_text
+    vertical-align: text-bottom
+    text-align: right
+    line-height: normal
+    position: absolute
+    font-size: 25px
+    color: #efefef
+    +transition(all 0.3s ease-in-out)
+    &.text_color_black
+      color: #191919
+      text-shadow: 1px 1px 0 rgba(255,255,255,0.25)
+    &.text_color_copper
+      color: #CB6D51
+      text-shadow: -1px -1px 0 rgba(0,0,0,0.5), 1px 1px 0 rgba(255,255,255,0.25)
+    &.text_color_silver
+      color: #999
+      text-shadow: -1px -1px 0 rgba(0,0,0,0.5)
+    &.text_color_blind
+      color: rgba(0,0,0,0.05)
+      text-shadow: -1px 0 0 rgba(0,0,0,0.1), 1px 0 0 rgba(255,255,255,0.1)
+    & > *
+      display: block
+      clear: both
+
+
+
+
+#config_preview
+  #album_preview
+    +perspective(1000)
+    +perspective-origin(30% (150))
+    position: relative
+    left: -20px
+    vertical-align: middle
+    #cube
+      margin: 0 auto
+      +transition(all 0.65s ease-in-out)
+      +transform-style(preserve-3d)
+      +transform(rotateY(-400deg))
+      & > div
+        position: absolute
+        color: transparent
+        +border-radius(1px)
+    #top_face, #bottom_face, #right_face
+      background:
+        color: $natural
+        image: image_url("gilding_pattern.png")
+        repeat: no-repeat
+        position: center
+    #left_face, #front_face, #back_face
+      background:
+        color: #191919
+        image: image_url("leather_pattern.png")
+        repeat: no-repeat
+        position: center
+
+    #album_preview, #left_face, #front_face, #back_face, #top_face, #right_face, #bottom_face, #album_text, #bottom_shadow
+      +transition(all 0.25s linear)
+
+    &.leather_color_black
+      #left_face, #front_face, #back_face
+        background-color: $black
+    &.leather_color_grey
+      #left_face, #front_face, #back_face
+        background-color: $grey
+    &.leather_color_red
+      #left_face, #front_face, #back_face
+        background-color: $red
+    &.leather_color_brown
+      #left_face, #front_face, #back_face
+        background-color: $brown
+
+
+    &.gilding_color_black
+      #top_face, #bottom_face, #right_face
+        background-color: $black
+
+    &.gilding_color_copper
+      #top_face, #bottom_face, #right_face
+        background-color: $copper
+
+    &.gilding_color_silver
+      #top_face, #bottom_face, #right_face
+        background-color: $silver
+
+
+
+
+    ////////// 35 PAGES ///////////
+    // &.thirty-five-pages
+    #top_face, #bottom_face
+      height: $pages
+    #right_face, #left_face
+      width: $pages
+    #top_face
+      +transform(rotateX(90deg) translateZ(($pages / 2) - $overhang))
+    #front_face
+      +transform(translateZ($pages / 2))
+    #left_face
+      +transform(rotateY(-90deg) translateZ($pages / 2))
+    #back_face
+      +transform(rotateY(180deg) translateZ($pages / 2))
+
+
+
+
+    ////////////////////////////
+    ////////// SIZES ///////////
+    ////////////////////////////
+
+    /////////////////////////////////////////////////////////
+    // SCALES (% of a 10x10 ($inch) for that preview size) //
+    /////////////////////////////////////////////////////////
+    $twelve-twelve: 0.88
+    $ten-ten: 1
+    $eight-eight: 1.18
+    $ten-fifteen: 0.76
+    $eight-twelve: 0.9
+    $six-nine: 1.14
+    $fifteen-ten: 0.76
+    $twelve-eight: 0.88
+    $nine-six: 1.11
+    $fourteen-eleven: 0.82
+    $eleven-fourteen: 0.8
+    $twelve-nine: 0.98
+    $nine-twelve: 0.92
+    $ten-eight: 1.03
+    $eight-ten: 1.05
+    $inch: 43.7px // (10x10" inch)
+    $logo_max_w: $inch * 2.25 // max logo width
+    $logo_max_h: $inch * 1.25 // max logo height
+
+    ////////////////////////////
+    ////// RELATIVE SIZES //////
+    ////////////////////////////
+    &.twelve-twelve
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $twelve-twelve
+        height: $logo_max_h * $twelve-twelve
+      #front_face #cover_text
+        bottom: $cover_text_margin * $twelve-twelve
+        right: $cover_text_margin * $twelve-twelve
+    &.ten-ten
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $ten-ten
+        height: $logo_max_h * $ten-ten
+      #front_face #cover_text
+        bottom: $cover_text_margin * $ten-ten
+        right: $cover_text_margin * $ten-ten
+    &.eight-eight
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $eight-eight
+        height: $logo_max_h * $eight-eight
+      #front_face #cover_text
+        bottom: $cover_text_margin * $eight-eight
+        right: $cover_text_margin * $eight-eight
+    &.ten-fifteen
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $ten-fifteen
+        height: $logo_max_h * $ten-fifteen
+      #front_face #cover_text
+        bottom: $cover_text_margin * $ten-fifteen
+        right: $cover_text_margin * $ten-fifteen
+    &.eight-twelve
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $eight-twelve
+        height: $logo_max_h * $eight-twelve
+      #front_face #cover_text
+        bottom: $cover_text_margin * $eight-twelve
+        right: $cover_text_margin * $eight-twelve
+    &.six-nine
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $six-nine
+        height: $logo_max_h * $six-nine
+      #front_face #cover_text
+        bottom: $cover_text_margin * $six-nine
+        right: $cover_text_margin * $six-nine
+    &.fifteen-ten
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $fifteen-ten
+        height: $logo_max_h * $fifteen-ten
+      #front_face #cover_text
+        bottom: $cover_text_margin * $fifteen-ten
+        right: $cover_text_margin * $fifteen-ten
+    &.twelve-eight
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $twelve-eight
+        height: $logo_max_h * $twelve-eight
+      #front_face #cover_text
+        bottom: $cover_text_margin * $twelve-eight
+        right: $cover_text_margin * $twelve-eight
+    &.nine-six
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $nine-six
+        height: $logo_max_h * $nine-six
+      #front_face #cover_text
+        bottom: $cover_text_margin * $nine-six
+        right: $cover_text_margin * $nine-six
+    &.fourteen-eleven
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $fourteen-eleven
+        height: $logo_max_h * $fourteen-eleven
+      #front_face #cover_text
+        bottom: $cover_text_margin * $fourteen-eleven
+        right: $cover_text_margin * $fourteen-eleven
+    &.eleven-fourteen
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $eleven-fourteen
+        height: $logo_max_h * $eleven-fourteen
+      #front_face #cover_text
+        bottom: $cover_text_margin * $eleven-fourteen
+        right: $cover_text_margin * $eleven-fourteen
+    &.twelve-nine
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $twelve-nine
+        height: $logo_max_h * $twelve-nine
+      #front_face #cover_text
+        bottom: $cover_text_margin * $twelve-nine
+        right: $cover_text_margin * $twelve-nine
+    &.nine-twelve
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $nine-twelve
+        height: $logo_max_h * $nine-twelve
+      #front_face #cover_text
+        bottom: $cover_text_margin * $nine-twelve
+        right: $cover_text_margin * $nine-twelve
+    &.ten-eight
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $ten-eight
+        height: $logo_max_h * $ten-eight
+      #front_face #cover_text
+        bottom: $cover_text_margin * $ten-eight
+        right: $cover_text_margin * $ten-eight
+    &.eight-ten
+      #back-face .studio_stamping_logo
+        width: $logo_max_w * $eight-ten
+        height: $logo_max_h * $eight-ten
+      #front_face #cover_text
+        bottom: $cover_text_margin * $eight-ten
+        right: $cover_text_margin * $eight-ten
+
+
+
+    // SCALEABLE SQUARE //
+
+    $SS-L: 460px
+    $SS-M: $SS-L * 0.95
+    $SS-S: $SS-L * 0.9
+
+    /////////// 12x12 ///////////
+    &.twelve-twelve
+      #cube, #front_face, #back_face
+        width: $SS-L
+        height: $SS-L
+      #top_face, #bottom_face
+        width: $SS-L - $overhang
+      #right_face
+        height: $SS-L - ($overhang * 2)
+      #left_face
+        height: $SS-L
+      #bottom_shadow
+        width: $SS-L
+        +transform(rotateX(-90deg) translateZ($SS-L))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SS-L - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SS-L - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 10x10 ///////////
+    &.ten-ten
+      #cube, #front_face, #back_face
+        width: $SS-M
+        height: $SS-M
+      #top_face, #bottom_face
+        width: $SS-M - $overhang
+      #right_face
+        height: $SS-M - ($overhang * 2)
+      #left_face
+        height: $SS-M
+      #bottom_shadow
+        width: $SS-M
+        +transform(rotateX(-90deg) translateZ($SS-M))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SS-M - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SS-M - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 8x8 ///////////
+    &.eight-eight
+      #cube, #front_face, #back_face
+        width: $SS-S
+        height: $SS-S
+      #top_face, #bottom_face
+        width: $SS-S - $overhang
+      #right_face
+        height: $SS-S - ($overhang * 2)
+      #left_face
+        height: $SS-S
+      #bottom_shadow
+        width: $SS-S
+        +transform(rotateX(-90deg) translateZ($SS-S))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SS-S - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SS-S - ($pages / 2) - $overhang) translateY($overhang))
+
+
+
+
+    // SCALEABLE PORTRAIT //
+
+    /////////// 10x15 ///////////
+    $SP-L-W: 333px
+    $SP-L-H: 500px
+    &.ten-fifteen
+      #cube, #front_face, #back_face
+        width: $SP-L-W
+        height: $SP-L-H
+      #top_face, #bottom_face
+        width: $SP-L-W - $overhang
+      #right_face
+        height: $SP-L-H - ($overhang * 2)
+      #left_face
+        height: $SP-L-H
+      #bottom_shadow
+        width: $SP-L-W
+        +transform(rotateX(-90deg) translateZ($SP-L-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SP-L-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SP-L-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 8x12 ///////////
+    $SP-M-W: $SP-L-W * 0.95
+    $SP-M-H: $SP-L-H * 0.95
+    &.eight-twelve
+      #cube, #front_face, #back_face
+        width: $SP-M-W
+        height: $SP-M-H
+      #top_face, #bottom_face
+        width: $SP-M-W - $overhang
+      #right_face
+        height: $SP-M-H - ($overhang * 2)
+      #left_face
+        height: $SP-M-H
+      #bottom_shadow
+        width: $SP-M-W
+        +transform(rotateX(-90deg) translateZ($SP-M-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SP-M-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SP-M-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 6x9 ///////////
+    $SP-S-W: $SP-L-W * 0.9
+    $SP-S-H: $SP-L-H * 0.9
+    &.six-nine
+      #cube, #front_face, #back_face
+        width: $SP-S-W
+        height: $SP-S-H
+      #top_face, #bottom_face
+        width: $SP-S-W - $overhang
+      #right_face
+        height: $SP-S-H - ($overhang * 2)
+      #left_face
+        height: $SP-S-H
+      #bottom_shadow
+        width: $SP-S-W
+        +transform(rotateX(-90deg) translateZ($SP-S-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SP-S-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SP-S-W - ($pages / 2) - $overhang) translateY($overhang))
+
+
+
+
+    // SCALEABLE LANDSCAPE //
+
+    /////////// 15x10 ///////////
+    $SL-L-W: 500px
+    $SL-L-H: 333px
+    &.fifteen-ten
+      #cube, #front_face, #back_face
+        width: $SL-L-W
+        height: $SL-L-H
+      #top_face, #bottom_face
+        width: $SL-L-W - $overhang
+      #right_face
+        height: $SL-L-H - ($overhang * 2)
+      #left_face
+        height: $SL-L-H
+      #bottom_shadow
+        width: $SL-L-W
+        +transform(rotateX(-90deg) translateZ($SL-L-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SL-L-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SL-L-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 12x8 ///////////
+    $SL-M-W: $SL-L-W * 0.925
+    $SL-M-H: $SL-L-H * 0.925
+    &.twelve-eight
+      #cube, #front_face, #back_face
+        width: $SL-M-W
+        height: $SL-M-H
+      #top_face, #bottom_face
+        width: $SL-M-W - $overhang
+      #right_face
+        height: $SL-M-H - ($overhang * 2)
+      #left_face
+        height: $SL-M-H
+      #bottom_shadow
+        width: $SL-M-W
+        +transform(rotateX(-90deg) translateZ($SL-M-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SL-M-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SL-M-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 9x6 ///////////
+    $SL-S-W: $SL-L-W * 0.875
+    $SL-S-H: $SL-L-H * 0.875
+    &.nine-six
+      #cube, #front_face, #back_face
+        width: $SL-S-W
+        height: $SL-S-H
+      #top_face, #bottom_face
+        width: $SL-S-W - $overhang
+      #right_face
+        height: $SL-S-H - ($overhang * 2)
+      #left_face
+        height: $SL-S-H
+      #bottom_shadow
+        width: $SL-S-W
+        +transform(rotateX(-90deg) translateZ($SL-S-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($SL-S-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($SL-S-W - ($pages / 2) - $overhang) translateY($overhang))
+
+
+
+
+    // NON-SCALEABLE //
+
+    /////////// 14x11 ///////////
+    $NS-1-multiplier: 36
+    $NS-1-W: $NS-1-multiplier * 14px
+    $NS-1-H: $NS-1-multiplier * 11px
+    &.fourteen-eleven
+      #cube, #front_face, #back_face
+        width: $NS-1-W
+        height: $NS-1-H
+      #top_face, #bottom_face
+        width: $NS-1-W - $overhang
+      #right_face
+        height: $NS-1-H - ($overhang * 2)
+      #left_face
+        height: $NS-1-H
+      #bottom_shadow
+        width: $NS-1-W
+        +transform(rotateX(-90deg) translateZ($NS-1-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($NS-1-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($NS-1-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 11x14 ///////////
+    $NS-2-multiplier: 35
+    $NS-2-W: $NS-2-multiplier * 11px
+    $NS-2-H: $NS-2-multiplier * 14px
+    &.eleven-fourteen
+      #cube, #front_face, #back_face
+        width: $NS-2-W
+        height: $NS-2-H
+      #top_face, #bottom_face
+        width: $NS-2-W - $overhang
+      #right_face
+        height: $NS-2-H - ($overhang * 2)
+      #left_face
+        height: $NS-2-H
+      #bottom_shadow
+        width: $NS-2-W
+        +transform(rotateX(-90deg) translateZ($NS-2-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($NS-2-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($NS-2-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 12x9 ///////////
+    $NS-3-multiplier: 43
+    $NS-3-W: $NS-3-multiplier * 12px
+    $NS-3-H: $NS-3-multiplier * 9px
+    &.twelve-nine
+      #cube, #front_face, #back_face
+        width: $NS-3-W
+        height: $NS-3-H
+      #top_face, #bottom_face
+        width: $NS-3-W - $overhang
+      #right_face
+        height: $NS-3-H - ($overhang * 2)
+      #left_face
+        height: $NS-3-H
+      #bottom_shadow
+        width: $NS-3-W
+        +transform(rotateX(-90deg) translateZ($NS-3-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($NS-3-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($NS-3-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 9x12 ///////////
+    $NS-4-multiplier: 40
+    $NS-4-W: $NS-4-multiplier * 9px
+    $NS-4-H: $NS-4-multiplier * 12px
+    &.nine-twelve
+      #cube, #front_face, #back_face
+        width: $NS-4-W
+        height: $NS-4-H
+      #top_face, #bottom_face
+        width: $NS-4-W - $overhang
+      #right_face
+        height: $NS-4-H - ($overhang * 2)
+      #left_face
+        height: $NS-4-H
+      #bottom_shadow
+        width: $NS-4-W
+        +transform(rotateX(-90deg) translateZ($NS-4-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($NS-4-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($NS-4-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 8x10 ///////////
+    $NS-5-multiplier: 46
+    $NS-5-W: $NS-5-multiplier * 8px
+    $NS-5-H: $NS-5-multiplier * 10px
+    &.eight-ten
+      #cube, #front_face, #back_face
+        width: $NS-5-W
+        height: $NS-5-H
+      #top_face, #bottom_face
+        width: $NS-5-W - $overhang
+      #right_face
+        height: $NS-5-H - ($overhang * 2)
+      #left_face
+        height: $NS-5-H
+      #bottom_shadow
+        width: $NS-5-W
+        +transform(rotateX(-90deg) translateZ($NS-5-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($NS-5-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($NS-5-W - ($pages / 2) - $overhang) translateY($overhang))
+
+    /////////// 10x8 ///////////
+    $NS-6-multiplier: 45
+    $NS-6-W: $NS-6-multiplier * 10px
+    $NS-6-H: $NS-6-multiplier * 8px
+    &.ten-eight
+      #cube, #front_face, #back_face
+        width: $NS-6-W
+        height: $NS-6-H
+      #top_face, #bottom_face
+        width: $NS-6-W - $overhang
+      #right_face
+        height: $NS-6-H - ($overhang * 2)
+      #left_face
+        height: $NS-6-H
+      #bottom_shadow
+        width: $NS-6-W
+        +transform(rotateX(-90deg) translateZ($NS-6-H))
+      #bottom_face
+        +transform(rotateX(-90deg) translateZ($NS-6-H - ($pages / 2) - $overhang))
+      #right_face
+        +transform(rotateY(90deg) translateZ($NS-6-W - ($pages / 2) - $overhang) translateY($overhang))
+
+#flip
+  position: absolute
+  left: 50%
+  margin-left: -45px
+  bottom: -30px
+  z-index: 9999
+  height: 30px
+  width: 90px
+  #front_flip, #back_flip
+    display: block
+    width: 45px
+    padding: 0
+    text-align: center
+    line-height: 30px
+    height: 30px
+    float: left
+  #front_flip
+    +border-radius(3px 0 0 3px)
+  #back_flip
+    +border-radius(0 3px 3px 0)
+  span
+    cursor: default
+    text-decoration: none
+    background-color: #efefef
+    &:hover, &:active
+      color: #000000
+    &.active, &.active:hover, &.active:active
+      cursor: pointer
+      color: white
+      background-color: #333
+
+#configure_book
+  height: 786px
+  width: 900px
+  padding: 0 30px
+  position: relative
+  left: -30px
+  margin-bottom: -30px
+
+  $config-height: 440px
+
+  #configurator
+    height: $config-height
+    width: 930px
+    top: 30px
+    margin-bottom: 30px
+    overflow: visible
+    position: relative
+    &.disabled
+      fieldset > *, #config_preview
+        opacity: 0.5
+
+    #config_preview
+      height: $config-height + 120
+
+    #config_form
+      color: #999
+      .margin
+        margin-top: 0.5em
+      input, select
+        margin: 0
+        width: 100%
+        display: block
+        &[type=text]
+          font-size: 11px
+      input[type="text"]
+        margin-top: 0.5em
+      label
+        margin-top: 3px
