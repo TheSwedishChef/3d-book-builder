@@ -50,7 +50,7 @@ jQuery(document).ready(function($){
     $("#album_preview, #trim_preview").addClass( $size );
   });
 
-  // FOR NOW, ALL BOOKS WILL SHOW THE SAME THICKNESS (RE: https://basecamp.com/1823259/projects/1148095-ae-physical-book/todos/89859482-choose-page)
+  // FOR NOW, ALL BOOKS WILL SHOW THE SAME THICKNESS: This was used to change # pages and affect book thickness
   // $("select#pages").change(function() {
   //   var $page = $("select#pages").val();
   //   $("#album_preview").removeClass('fifteen-pages twenty-pages twenty-five-pages thirty-pages thirty-five-pages forty-pages');
