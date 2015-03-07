@@ -1,11 +1,11 @@
 %form#configure_book
   #configurator
-    %div#config_form{ style: "width: 33%; float: left" }
+    #config_form
       %p
         %label{ for: "size" } Size
         %br
         %select#size
-          %option{ value: "-select-", selected: "selected" } -select-
+          %option{ value: "-select-" } -select-
           %option{ value: "twelve-twelve" } 12x12"
           %option{ value: "ten-ten" } 10x10"
           %option{ value: "eight-eight" } 8x8"
@@ -14,7 +14,7 @@
           %option{ value: "six-nine" } 6x9"
           %option{ value: "fifteen-ten" } 15x10"
           %option{ value: "twelve-eight" } 12x8"
-          %option{ value: "nine-six" } 9x6"
+          %option{ value: "nine-six", selected: "selected" } 9x6"
           %option{ value: "fourteen-eleven" } 14x11"
           %option{ value: "eleven-fourteen" } 11x14"
           %option{ value: "twelve-nine" } 12x9"
@@ -25,8 +25,8 @@
         %label{ for: "leather" } Leather
         %br
         %select#leather
-          %option{ value: "-color-", selected: "selected" } -color-
-          %option{ value: "leather_color_black" } Black
+          %option{ value: "-color-" } -color-
+          %option{ value: "leather_color_black", selected: "selected" } Black
           %option{ value: "leather_color_grey" } Grey
           %option{ value: "leather_color_red" } Red
           %option{ value: "leather_color_brown" } Brown
@@ -34,27 +34,32 @@
         %label{ for: "gilding_color" } Gilding
         %br
         %select#gilding_color
-          %option{ value: "-color-", selected: "selected" } -color-
+          %option{ value: "-color-" } -color-
           %option{ value: "gilding_color_black" } Black
           %option{ value: "gilding_color_copper" } Copper
           %option{ value: "gilding_color_silver" } Silver
-          %option{ value: "gilding_color_natural" } (natural paper)
+          %option{ value: "gilding_color_natural", selected: "selected" } (natural paper)
       %p
         %label{ for: "text_color" } Cover Text
         %br
         %select#text_color
-          %option{ value: "-color-", selected: "selected" } -color-
+          %option{ value: "-color-" } -color-
           %option{ value: "text_color_black" } Black
           %option{ value: "text_color_copper" } Copper
-          %option{ value: "text_color_silver" } Silver
+          %option{ value: "text_color_silver", selected: "selected" } Silver
           %option{ value: "text_color_blind" } (leather deboss)
         %br
         %input#cover_text_line1{ type: "text", maxlength: "40", placeholder: "Line 1" }
         %br
         %input#cover_text_line2{ type: "text", maxlength: "40", placeholder: "Line 2" }
+      %p
+        %nav#flip
+          %div
+            %span#front_flip.active{ href: '#' } Front
+            %span#back_flip{ href: '#' } Back
 
-    #config_preview{ style: "width: 66%; position: relative; float: left" }
-      #album_preview.leather_color_red.nine-six
+    #config_preview
+      #album_preview.leather_color_black.text_color_silver.gilding_color_natural.nine-six
         #cube
           #front_face
             #cover_text.text_font_modern.color_silver
@@ -65,12 +70,5 @@
           #bottom_face
           #bottom_shadow
           #back_face
-            #stamping.color_silver
-              .studio_stamping_text
           #right_face
-      %nav#flip
-        %div
-          %span#front_flip{ href: '#' } Front
-          %span#back_flip.active{ href: '#' } Back
-        .clear
     .clear

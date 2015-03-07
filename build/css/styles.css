@@ -1,0 +1,870 @@
+/* line 32, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#front_face {
+  z-index: 5; }
+
+/* line 34, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#left_face, #top_face, #bottom_face {
+  z-index: 4; }
+
+/* line 36, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#back_face, #right_face {
+  z-index: 3; }
+
+/* line 38, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#bottom_shadow {
+  z-index: 2; }
+
+/* line 41, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#front_face, #right_face, #left_face, #top_face, #bottom_face, #bottom_shadow {
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-perspective: 1000;
+  perspective: 1000; }
+
+/* line 45, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#top_face, #right_face, #bottom_face, #left_face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+/* line 47, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#bottom_shadow {
+  -moz-box-shadow: 0 -5px 50px 25px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 -5px 50px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -5px 50px 25px rgba(0, 0, 0, 0.4);
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible; }
+
+/* line 56, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#back_face {
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+  text-align: center; }
+  /* line 61, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #back_face .studio_stamping_logo img {
+    position: absolute;
+    bottom: 30px;
+    left: 30%;
+    opacity: 0.8;
+    max-width: 100%;
+    max-height: 100%; }
+
+/* line 69, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#front_face {
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important; }
+  /* line 72, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #front_face #cover_text {
+    vertical-align: text-bottom;
+    text-align: right;
+    line-height: normal;
+    position: absolute;
+    font-size: 25px;
+    color: #efefef;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    /* line 80, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #front_face #cover_text.text_color_black {
+      color: #191919;
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25); }
+    /* line 83, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #front_face #cover_text.text_color_copper {
+      color: #CB6D51;
+      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(255, 255, 255, 0.25); }
+    /* line 86, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #front_face #cover_text.text_color_silver {
+      color: #999;
+      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5); }
+    /* line 89, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #front_face #cover_text.text_color_blind {
+      color: rgba(0, 0, 0, 0.05);
+      text-shadow: -1px 0 0 rgba(0, 0, 0, 0.1), 1px 0 0 rgba(255, 255, 255, 0.1); }
+    /* line 92, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #front_face #cover_text > * {
+      display: block;
+      clear: both; }
+
+/* line 100, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#config_preview #album_preview {
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -moz-perspective-origin: 30% 150;
+  -webkit-perspective-origin: 30% 150;
+  perspective-origin: 30% 150;
+  position: relative;
+  left: -20px;
+  vertical-align: middle; }
+  /* line 106, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #cube {
+    margin: 0 auto;
+    -moz-transition: all 0.65s ease-in-out;
+    -o-transition: all 0.65s ease-in-out;
+    -webkit-transition: all 0.65s ease-in-out;
+    transition: all 0.65s ease-in-out;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -moz-transform: rotateY(-400deg);
+    -ms-transform: rotateY(-400deg);
+    -webkit-transform: rotateY(-400deg);
+    transform: rotateY(-400deg); }
+    /* line 111, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #config_preview #album_preview #cube > div {
+      position: absolute;
+      color: transparent;
+      -moz-border-radius: 1px;
+      -webkit-border-radius: 1px;
+      border-radius: 1px; }
+  /* line 115, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #top_face, #config_preview #album_preview #bottom_face, #config_preview #album_preview #right_face {
+    background-color: #d7d7d7;
+    background-image: url("../img/gilding_pattern.png");
+    background-repeat: no-repeat;
+    background-position: center; }
+  /* line 121, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #left_face, #config_preview #album_preview #front_face, #config_preview #album_preview #back_face {
+    background-color: #191919;
+    background-image: url("../img/leather_pattern.png");
+    background-repeat: no-repeat;
+    background-position: center; }
+  /* line 128, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #album_preview, #config_preview #album_preview #left_face, #config_preview #album_preview #front_face, #config_preview #album_preview #back_face, #config_preview #album_preview #top_face, #config_preview #album_preview #right_face, #config_preview #album_preview #bottom_face, #config_preview #album_preview #album_text, #config_preview #album_preview #bottom_shadow {
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear; }
+  /* line 132, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.leather_color_black #left_face, #config_preview #album_preview.leather_color_black #front_face, #config_preview #album_preview.leather_color_black #back_face {
+    background-color: #2e2e2e; }
+  /* line 135, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.leather_color_grey #left_face, #config_preview #album_preview.leather_color_grey #front_face, #config_preview #album_preview.leather_color_grey #back_face {
+    background-color: #bbbbbb; }
+  /* line 138, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.leather_color_red #left_face, #config_preview #album_preview.leather_color_red #front_face, #config_preview #album_preview.leather_color_red #back_face {
+    background-color: #a4111a; }
+  /* line 141, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.leather_color_brown #left_face, #config_preview #album_preview.leather_color_brown #front_face, #config_preview #album_preview.leather_color_brown #back_face {
+    background-color: #7b3a2a; }
+  /* line 146, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.gilding_color_black #top_face, #config_preview #album_preview.gilding_color_black #bottom_face, #config_preview #album_preview.gilding_color_black #right_face {
+    background-color: #2e2e2e; }
+  /* line 150, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.gilding_color_copper #top_face, #config_preview #album_preview.gilding_color_copper #bottom_face, #config_preview #album_preview.gilding_color_copper #right_face {
+    background-color: #c0884d; }
+  /* line 154, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.gilding_color_silver #top_face, #config_preview #album_preview.gilding_color_silver #bottom_face, #config_preview #album_preview.gilding_color_silver #right_face {
+    background-color: #bababa; }
+  /* line 162, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #top_face, #config_preview #album_preview #bottom_face {
+    height: 84px; }
+  /* line 164, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #right_face, #config_preview #album_preview #left_face {
+    width: 84px; }
+  /* line 166, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #top_face {
+    -moz-transform: rotateX(90deg) translateZ(37px);
+    -ms-transform: rotateX(90deg) translateZ(37px);
+    -webkit-transform: rotateX(90deg) translateZ(37px);
+    transform: rotateX(90deg) translateZ(37px); }
+  /* line 168, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #front_face {
+    -moz-transform: translateZ(42px);
+    -ms-transform: translateZ(42px);
+    -webkit-transform: translateZ(42px);
+    transform: translateZ(42px); }
+  /* line 170, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #left_face {
+    -moz-transform: rotateY(-90deg) translateZ(42px);
+    -ms-transform: rotateY(-90deg) translateZ(42px);
+    -webkit-transform: rotateY(-90deg) translateZ(42px);
+    transform: rotateY(-90deg) translateZ(42px); }
+  /* line 172, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview #back_face {
+    -moz-transform: rotateY(180deg) translateZ(42px);
+    -ms-transform: rotateY(180deg) translateZ(42px);
+    -webkit-transform: rotateY(180deg) translateZ(42px);
+    transform: rotateY(180deg) translateZ(42px); }
+  /* line 208, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #back-face .studio_stamping_logo {
+    width: 86.526px;
+    height: 48.07px; }
+  /* line 211, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #front_face #cover_text {
+    bottom: 38.456px;
+    right: 38.456px; }
+  /* line 215, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #back-face .studio_stamping_logo {
+    width: 98.325px;
+    height: 54.625px; }
+  /* line 218, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #front_face #cover_text {
+    bottom: 43.7px;
+    right: 43.7px; }
+  /* line 222, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #back-face .studio_stamping_logo {
+    width: 116.0235px;
+    height: 64.4575px; }
+  /* line 225, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #front_face #cover_text {
+    bottom: 51.566px;
+    right: 51.566px; }
+  /* line 229, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #back-face .studio_stamping_logo {
+    width: 74.727px;
+    height: 41.515px; }
+  /* line 232, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #front_face #cover_text {
+    bottom: 33.212px;
+    right: 33.212px; }
+  /* line 236, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #back-face .studio_stamping_logo {
+    width: 88.4925px;
+    height: 49.1625px; }
+  /* line 239, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #front_face #cover_text {
+    bottom: 39.33px;
+    right: 39.33px; }
+  /* line 243, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #back-face .studio_stamping_logo {
+    width: 112.0905px;
+    height: 62.2725px; }
+  /* line 246, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #front_face #cover_text {
+    bottom: 49.818px;
+    right: 49.818px; }
+  /* line 250, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #back-face .studio_stamping_logo {
+    width: 74.727px;
+    height: 41.515px; }
+  /* line 253, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #front_face #cover_text {
+    bottom: 33.212px;
+    right: 33.212px; }
+  /* line 257, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #back-face .studio_stamping_logo {
+    width: 86.526px;
+    height: 48.07px; }
+  /* line 260, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #front_face #cover_text {
+    bottom: 38.456px;
+    right: 38.456px; }
+  /* line 264, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #back-face .studio_stamping_logo {
+    width: 109.14075px;
+    height: 60.63375px; }
+  /* line 267, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #front_face #cover_text {
+    bottom: 48.507px;
+    right: 48.507px; }
+  /* line 271, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #back-face .studio_stamping_logo {
+    width: 80.6265px;
+    height: 44.7925px; }
+  /* line 274, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #front_face #cover_text {
+    bottom: 35.834px;
+    right: 35.834px; }
+  /* line 278, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #back-face .studio_stamping_logo {
+    width: 78.66px;
+    height: 43.7px; }
+  /* line 281, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #front_face #cover_text {
+    bottom: 34.96px;
+    right: 34.96px; }
+  /* line 285, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #back-face .studio_stamping_logo {
+    width: 96.3585px;
+    height: 53.5325px; }
+  /* line 288, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #front_face #cover_text {
+    bottom: 42.826px;
+    right: 42.826px; }
+  /* line 292, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #back-face .studio_stamping_logo {
+    width: 90.459px;
+    height: 50.255px; }
+  /* line 295, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #front_face #cover_text {
+    bottom: 40.204px;
+    right: 40.204px; }
+  /* line 299, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #back-face .studio_stamping_logo {
+    width: 101.27475px;
+    height: 56.26375px; }
+  /* line 302, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #front_face #cover_text {
+    bottom: 45.011px;
+    right: 45.011px; }
+  /* line 306, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #back-face .studio_stamping_logo {
+    width: 103.24125px;
+    height: 57.35625px; }
+  /* line 309, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #front_face #cover_text {
+    bottom: 45.885px;
+    right: 45.885px; }
+  /* line 323, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #cube, #config_preview #album_preview.twelve-twelve #front_face, #config_preview #album_preview.twelve-twelve #back_face {
+    width: 460px;
+    height: 460px; }
+  /* line 326, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #top_face, #config_preview #album_preview.twelve-twelve #bottom_face {
+    width: 455px; }
+  /* line 328, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #right_face {
+    height: 450px; }
+  /* line 330, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #left_face {
+    height: 460px; }
+  /* line 332, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #bottom_shadow {
+    width: 460px;
+    -moz-transform: rotateX(-90deg) translateZ(460px);
+    -ms-transform: rotateX(-90deg) translateZ(460px);
+    -webkit-transform: rotateX(-90deg) translateZ(460px);
+    transform: rotateX(-90deg) translateZ(460px); }
+  /* line 335, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(413px);
+    -ms-transform: rotateX(-90deg) translateZ(413px);
+    -webkit-transform: rotateX(-90deg) translateZ(413px);
+    transform: rotateX(-90deg) translateZ(413px); }
+  /* line 337, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-twelve #right_face {
+    -moz-transform: rotateY(90deg) translateZ(413px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(413px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(413px) translateY(5px);
+    transform: rotateY(90deg) translateZ(413px) translateY(5px); }
+  /* line 342, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #cube, #config_preview #album_preview.ten-ten #front_face, #config_preview #album_preview.ten-ten #back_face {
+    width: 437px;
+    height: 437px; }
+  /* line 345, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #top_face, #config_preview #album_preview.ten-ten #bottom_face {
+    width: 432px; }
+  /* line 347, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #right_face {
+    height: 427px; }
+  /* line 349, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #left_face {
+    height: 437px; }
+  /* line 351, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #bottom_shadow {
+    width: 437px;
+    -moz-transform: rotateX(-90deg) translateZ(437px);
+    -ms-transform: rotateX(-90deg) translateZ(437px);
+    -webkit-transform: rotateX(-90deg) translateZ(437px);
+    transform: rotateX(-90deg) translateZ(437px); }
+  /* line 354, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(390px);
+    -ms-transform: rotateX(-90deg) translateZ(390px);
+    -webkit-transform: rotateX(-90deg) translateZ(390px);
+    transform: rotateX(-90deg) translateZ(390px); }
+  /* line 356, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-ten #right_face {
+    -moz-transform: rotateY(90deg) translateZ(390px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(390px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(390px) translateY(5px);
+    transform: rotateY(90deg) translateZ(390px) translateY(5px); }
+  /* line 361, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #cube, #config_preview #album_preview.eight-eight #front_face, #config_preview #album_preview.eight-eight #back_face {
+    width: 414px;
+    height: 414px; }
+  /* line 364, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #top_face, #config_preview #album_preview.eight-eight #bottom_face {
+    width: 409px; }
+  /* line 366, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #right_face {
+    height: 404px; }
+  /* line 368, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #left_face {
+    height: 414px; }
+  /* line 370, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #bottom_shadow {
+    width: 414px;
+    -moz-transform: rotateX(-90deg) translateZ(414px);
+    -ms-transform: rotateX(-90deg) translateZ(414px);
+    -webkit-transform: rotateX(-90deg) translateZ(414px);
+    transform: rotateX(-90deg) translateZ(414px); }
+  /* line 373, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(367px);
+    -ms-transform: rotateX(-90deg) translateZ(367px);
+    -webkit-transform: rotateX(-90deg) translateZ(367px);
+    transform: rotateX(-90deg) translateZ(367px); }
+  /* line 375, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-eight #right_face {
+    -moz-transform: rotateY(90deg) translateZ(367px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(367px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(367px) translateY(5px);
+    transform: rotateY(90deg) translateZ(367px) translateY(5px); }
+  /* line 387, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #cube, #config_preview #album_preview.ten-fifteen #front_face, #config_preview #album_preview.ten-fifteen #back_face {
+    width: 333px;
+    height: 500px; }
+  /* line 390, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #top_face, #config_preview #album_preview.ten-fifteen #bottom_face {
+    width: 328px; }
+  /* line 392, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #right_face {
+    height: 490px; }
+  /* line 394, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #left_face {
+    height: 500px; }
+  /* line 396, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #bottom_shadow {
+    width: 333px;
+    -moz-transform: rotateX(-90deg) translateZ(500px);
+    -ms-transform: rotateX(-90deg) translateZ(500px);
+    -webkit-transform: rotateX(-90deg) translateZ(500px);
+    transform: rotateX(-90deg) translateZ(500px); }
+  /* line 399, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(453px);
+    -ms-transform: rotateX(-90deg) translateZ(453px);
+    -webkit-transform: rotateX(-90deg) translateZ(453px);
+    transform: rotateX(-90deg) translateZ(453px); }
+  /* line 401, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-fifteen #right_face {
+    -moz-transform: rotateY(90deg) translateZ(286px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(286px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(286px) translateY(5px);
+    transform: rotateY(90deg) translateZ(286px) translateY(5px); }
+  /* line 408, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #cube, #config_preview #album_preview.eight-twelve #front_face, #config_preview #album_preview.eight-twelve #back_face {
+    width: 316.35px;
+    height: 475px; }
+  /* line 411, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #top_face, #config_preview #album_preview.eight-twelve #bottom_face {
+    width: 311.35px; }
+  /* line 413, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #right_face {
+    height: 465px; }
+  /* line 415, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #left_face {
+    height: 475px; }
+  /* line 417, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #bottom_shadow {
+    width: 316.35px;
+    -moz-transform: rotateX(-90deg) translateZ(475px);
+    -ms-transform: rotateX(-90deg) translateZ(475px);
+    -webkit-transform: rotateX(-90deg) translateZ(475px);
+    transform: rotateX(-90deg) translateZ(475px); }
+  /* line 420, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(428px);
+    -ms-transform: rotateX(-90deg) translateZ(428px);
+    -webkit-transform: rotateX(-90deg) translateZ(428px);
+    transform: rotateX(-90deg) translateZ(428px); }
+  /* line 422, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-twelve #right_face {
+    -moz-transform: rotateY(90deg) translateZ(269.35px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(269.35px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(269.35px) translateY(5px);
+    transform: rotateY(90deg) translateZ(269.35px) translateY(5px); }
+  /* line 429, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #cube, #config_preview #album_preview.six-nine #front_face, #config_preview #album_preview.six-nine #back_face {
+    width: 299.7px;
+    height: 450px; }
+  /* line 432, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #top_face, #config_preview #album_preview.six-nine #bottom_face {
+    width: 294.7px; }
+  /* line 434, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #right_face {
+    height: 440px; }
+  /* line 436, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #left_face {
+    height: 450px; }
+  /* line 438, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #bottom_shadow {
+    width: 299.7px;
+    -moz-transform: rotateX(-90deg) translateZ(450px);
+    -ms-transform: rotateX(-90deg) translateZ(450px);
+    -webkit-transform: rotateX(-90deg) translateZ(450px);
+    transform: rotateX(-90deg) translateZ(450px); }
+  /* line 441, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(403px);
+    -ms-transform: rotateX(-90deg) translateZ(403px);
+    -webkit-transform: rotateX(-90deg) translateZ(403px);
+    transform: rotateX(-90deg) translateZ(403px); }
+  /* line 443, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.six-nine #right_face {
+    -moz-transform: rotateY(90deg) translateZ(252.7px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(252.7px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(252.7px) translateY(5px);
+    transform: rotateY(90deg) translateZ(252.7px) translateY(5px); }
+  /* line 455, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #cube, #config_preview #album_preview.fifteen-ten #front_face, #config_preview #album_preview.fifteen-ten #back_face {
+    width: 500px;
+    height: 333px; }
+  /* line 458, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #top_face, #config_preview #album_preview.fifteen-ten #bottom_face {
+    width: 495px; }
+  /* line 460, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #right_face {
+    height: 323px; }
+  /* line 462, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #left_face {
+    height: 333px; }
+  /* line 464, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #bottom_shadow {
+    width: 500px;
+    -moz-transform: rotateX(-90deg) translateZ(333px);
+    -ms-transform: rotateX(-90deg) translateZ(333px);
+    -webkit-transform: rotateX(-90deg) translateZ(333px);
+    transform: rotateX(-90deg) translateZ(333px); }
+  /* line 467, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(286px);
+    -ms-transform: rotateX(-90deg) translateZ(286px);
+    -webkit-transform: rotateX(-90deg) translateZ(286px);
+    transform: rotateX(-90deg) translateZ(286px); }
+  /* line 469, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fifteen-ten #right_face {
+    -moz-transform: rotateY(90deg) translateZ(453px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(453px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(453px) translateY(5px);
+    transform: rotateY(90deg) translateZ(453px) translateY(5px); }
+  /* line 476, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #cube, #config_preview #album_preview.twelve-eight #front_face, #config_preview #album_preview.twelve-eight #back_face {
+    width: 462.5px;
+    height: 308.025px; }
+  /* line 479, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #top_face, #config_preview #album_preview.twelve-eight #bottom_face {
+    width: 457.5px; }
+  /* line 481, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #right_face {
+    height: 298.025px; }
+  /* line 483, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #left_face {
+    height: 308.025px; }
+  /* line 485, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #bottom_shadow {
+    width: 462.5px;
+    -moz-transform: rotateX(-90deg) translateZ(308.025px);
+    -ms-transform: rotateX(-90deg) translateZ(308.025px);
+    -webkit-transform: rotateX(-90deg) translateZ(308.025px);
+    transform: rotateX(-90deg) translateZ(308.025px); }
+  /* line 488, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(261.025px);
+    -ms-transform: rotateX(-90deg) translateZ(261.025px);
+    -webkit-transform: rotateX(-90deg) translateZ(261.025px);
+    transform: rotateX(-90deg) translateZ(261.025px); }
+  /* line 490, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-eight #right_face {
+    -moz-transform: rotateY(90deg) translateZ(415.5px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(415.5px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(415.5px) translateY(5px);
+    transform: rotateY(90deg) translateZ(415.5px) translateY(5px); }
+  /* line 497, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #cube, #config_preview #album_preview.nine-six #front_face, #config_preview #album_preview.nine-six #back_face {
+    width: 437.5px;
+    height: 291.375px; }
+  /* line 500, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #top_face, #config_preview #album_preview.nine-six #bottom_face {
+    width: 432.5px; }
+  /* line 502, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #right_face {
+    height: 281.375px; }
+  /* line 504, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #left_face {
+    height: 291.375px; }
+  /* line 506, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #bottom_shadow {
+    width: 437.5px;
+    -moz-transform: rotateX(-90deg) translateZ(291.375px);
+    -ms-transform: rotateX(-90deg) translateZ(291.375px);
+    -webkit-transform: rotateX(-90deg) translateZ(291.375px);
+    transform: rotateX(-90deg) translateZ(291.375px); }
+  /* line 509, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(244.375px);
+    -ms-transform: rotateX(-90deg) translateZ(244.375px);
+    -webkit-transform: rotateX(-90deg) translateZ(244.375px);
+    transform: rotateX(-90deg) translateZ(244.375px); }
+  /* line 511, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-six #right_face {
+    -moz-transform: rotateY(90deg) translateZ(390.5px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(390.5px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(390.5px) translateY(5px);
+    transform: rotateY(90deg) translateZ(390.5px) translateY(5px); }
+  /* line 524, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #cube, #config_preview #album_preview.fourteen-eleven #front_face, #config_preview #album_preview.fourteen-eleven #back_face {
+    width: 504px;
+    height: 396px; }
+  /* line 527, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #top_face, #config_preview #album_preview.fourteen-eleven #bottom_face {
+    width: 499px; }
+  /* line 529, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #right_face {
+    height: 386px; }
+  /* line 531, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #left_face {
+    height: 396px; }
+  /* line 533, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #bottom_shadow {
+    width: 504px;
+    -moz-transform: rotateX(-90deg) translateZ(396px);
+    -ms-transform: rotateX(-90deg) translateZ(396px);
+    -webkit-transform: rotateX(-90deg) translateZ(396px);
+    transform: rotateX(-90deg) translateZ(396px); }
+  /* line 536, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(349px);
+    -ms-transform: rotateX(-90deg) translateZ(349px);
+    -webkit-transform: rotateX(-90deg) translateZ(349px);
+    transform: rotateX(-90deg) translateZ(349px); }
+  /* line 538, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.fourteen-eleven #right_face {
+    -moz-transform: rotateY(90deg) translateZ(457px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(457px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(457px) translateY(5px);
+    transform: rotateY(90deg) translateZ(457px) translateY(5px); }
+  /* line 546, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #cube, #config_preview #album_preview.eleven-fourteen #front_face, #config_preview #album_preview.eleven-fourteen #back_face {
+    width: 385px;
+    height: 490px; }
+  /* line 549, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #top_face, #config_preview #album_preview.eleven-fourteen #bottom_face {
+    width: 380px; }
+  /* line 551, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #right_face {
+    height: 480px; }
+  /* line 553, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #left_face {
+    height: 490px; }
+  /* line 555, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #bottom_shadow {
+    width: 385px;
+    -moz-transform: rotateX(-90deg) translateZ(490px);
+    -ms-transform: rotateX(-90deg) translateZ(490px);
+    -webkit-transform: rotateX(-90deg) translateZ(490px);
+    transform: rotateX(-90deg) translateZ(490px); }
+  /* line 558, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(443px);
+    -ms-transform: rotateX(-90deg) translateZ(443px);
+    -webkit-transform: rotateX(-90deg) translateZ(443px);
+    transform: rotateX(-90deg) translateZ(443px); }
+  /* line 560, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eleven-fourteen #right_face {
+    -moz-transform: rotateY(90deg) translateZ(338px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(338px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(338px) translateY(5px);
+    transform: rotateY(90deg) translateZ(338px) translateY(5px); }
+  /* line 568, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #cube, #config_preview #album_preview.twelve-nine #front_face, #config_preview #album_preview.twelve-nine #back_face {
+    width: 516px;
+    height: 387px; }
+  /* line 571, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #top_face, #config_preview #album_preview.twelve-nine #bottom_face {
+    width: 511px; }
+  /* line 573, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #right_face {
+    height: 377px; }
+  /* line 575, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #left_face {
+    height: 387px; }
+  /* line 577, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #bottom_shadow {
+    width: 516px;
+    -moz-transform: rotateX(-90deg) translateZ(387px);
+    -ms-transform: rotateX(-90deg) translateZ(387px);
+    -webkit-transform: rotateX(-90deg) translateZ(387px);
+    transform: rotateX(-90deg) translateZ(387px); }
+  /* line 580, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(340px);
+    -ms-transform: rotateX(-90deg) translateZ(340px);
+    -webkit-transform: rotateX(-90deg) translateZ(340px);
+    transform: rotateX(-90deg) translateZ(340px); }
+  /* line 582, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.twelve-nine #right_face {
+    -moz-transform: rotateY(90deg) translateZ(469px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(469px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(469px) translateY(5px);
+    transform: rotateY(90deg) translateZ(469px) translateY(5px); }
+  /* line 590, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #cube, #config_preview #album_preview.nine-twelve #front_face, #config_preview #album_preview.nine-twelve #back_face {
+    width: 360px;
+    height: 480px; }
+  /* line 593, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #top_face, #config_preview #album_preview.nine-twelve #bottom_face {
+    width: 355px; }
+  /* line 595, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #right_face {
+    height: 470px; }
+  /* line 597, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #left_face {
+    height: 480px; }
+  /* line 599, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #bottom_shadow {
+    width: 360px;
+    -moz-transform: rotateX(-90deg) translateZ(480px);
+    -ms-transform: rotateX(-90deg) translateZ(480px);
+    -webkit-transform: rotateX(-90deg) translateZ(480px);
+    transform: rotateX(-90deg) translateZ(480px); }
+  /* line 602, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(433px);
+    -ms-transform: rotateX(-90deg) translateZ(433px);
+    -webkit-transform: rotateX(-90deg) translateZ(433px);
+    transform: rotateX(-90deg) translateZ(433px); }
+  /* line 604, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.nine-twelve #right_face {
+    -moz-transform: rotateY(90deg) translateZ(313px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(313px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(313px) translateY(5px);
+    transform: rotateY(90deg) translateZ(313px) translateY(5px); }
+  /* line 612, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #cube, #config_preview #album_preview.eight-ten #front_face, #config_preview #album_preview.eight-ten #back_face {
+    width: 368px;
+    height: 460px; }
+  /* line 615, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #top_face, #config_preview #album_preview.eight-ten #bottom_face {
+    width: 363px; }
+  /* line 617, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #right_face {
+    height: 450px; }
+  /* line 619, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #left_face {
+    height: 460px; }
+  /* line 621, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #bottom_shadow {
+    width: 368px;
+    -moz-transform: rotateX(-90deg) translateZ(460px);
+    -ms-transform: rotateX(-90deg) translateZ(460px);
+    -webkit-transform: rotateX(-90deg) translateZ(460px);
+    transform: rotateX(-90deg) translateZ(460px); }
+  /* line 624, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(413px);
+    -ms-transform: rotateX(-90deg) translateZ(413px);
+    -webkit-transform: rotateX(-90deg) translateZ(413px);
+    transform: rotateX(-90deg) translateZ(413px); }
+  /* line 626, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.eight-ten #right_face {
+    -moz-transform: rotateY(90deg) translateZ(321px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(321px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(321px) translateY(5px);
+    transform: rotateY(90deg) translateZ(321px) translateY(5px); }
+  /* line 634, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #cube, #config_preview #album_preview.ten-eight #front_face, #config_preview #album_preview.ten-eight #back_face {
+    width: 450px;
+    height: 360px; }
+  /* line 637, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #top_face, #config_preview #album_preview.ten-eight #bottom_face {
+    width: 445px; }
+  /* line 639, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #right_face {
+    height: 350px; }
+  /* line 641, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #left_face {
+    height: 360px; }
+  /* line 643, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #bottom_shadow {
+    width: 450px;
+    -moz-transform: rotateX(-90deg) translateZ(360px);
+    -ms-transform: rotateX(-90deg) translateZ(360px);
+    -webkit-transform: rotateX(-90deg) translateZ(360px);
+    transform: rotateX(-90deg) translateZ(360px); }
+  /* line 646, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #bottom_face {
+    -moz-transform: rotateX(-90deg) translateZ(313px);
+    -ms-transform: rotateX(-90deg) translateZ(313px);
+    -webkit-transform: rotateX(-90deg) translateZ(313px);
+    transform: rotateX(-90deg) translateZ(313px); }
+  /* line 648, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #config_preview #album_preview.ten-eight #right_face {
+    -moz-transform: rotateY(90deg) translateZ(403px) translateY(5px);
+    -ms-transform: rotateY(90deg) translateZ(403px) translateY(5px);
+    -webkit-transform: rotateY(90deg) translateZ(403px) translateY(5px);
+    transform: rotateY(90deg) translateZ(403px) translateY(5px); }
+
+/* line 651, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#flip {
+  position: absolute;
+  left: 50%;
+  margin-left: -45px;
+  bottom: -30px;
+  z-index: 9999;
+  height: 30px;
+  width: 90px; }
+  /* line 659, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #flip #front_flip, #flip #back_flip {
+    display: block;
+    width: 45px;
+    padding: 0;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    float: left; }
+  /* line 667, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #flip #front_flip {
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px 0 0 3px; }
+  /* line 669, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #flip #back_flip {
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0;
+    border-radius: 0 3px 3px 0; }
+  /* line 671, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #flip span {
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    cursor: pointer; }
+    /* line 676, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #flip span.active, #flip span.active:hover, #flip span.active:active {
+      cursor: default;
+      color: #000000;
+      background-color: #efefef; }
+
+/* line 681, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+#configure_book {
+  height: 600px; }
+  /* line 686, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+  #configure_book #configurator {
+    height: 440px;
+    width: 930px;
+    top: 30px;
+    margin-bottom: 30px;
+    overflow: visible;
+    position: relative; }
+    /* line 694, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #configure_book #configurator.disabled fieldset > *, #configure_book #configurator.disabled #config_preview {
+      opacity: 0.5; }
+    /* line 697, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #configure_book #configurator #config_preview {
+      height: 560px; }
+    /* line 700, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+    #configure_book #configurator #config_form {
+      color: #999; }
+      /* line 702, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+      #configure_book #configurator #config_form .margin {
+        margin-top: 0.5em; }
+      /* line 704, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+      #configure_book #configurator #config_form input, #configure_book #configurator #config_form select {
+        margin: 0;
+        width: 100%;
+        display: block; }
+        /* line 708, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+        #configure_book #configurator #config_form input[type=text], #configure_book #configurator #config_form select[type=text] {
+          font-size: 11px; }
+      /* line 710, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+      #configure_book #configurator #config_form input[type="text"] {
+        margin-top: 0.5em; }
+      /* line 712, /Users/Lorensson/Sites/3d-book-builder/source/css/styles.sass */
+      #configure_book #configurator #config_form label {
+        margin-top: 3px; }

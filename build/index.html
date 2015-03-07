@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+  <meta charset='utf-8'>
+  <title>3D Book Builder</title>
+  <script src="js/jquery-1.11.2.min.js?1425702761" type="text/javascript"></script>
+  <script src="js/jquery-ui.js?1425702761" type="text/javascript"></script>
+  <script src="js/jquery.ui.tabs.js?1425702760" type="text/javascript"></script>
+  <script src="js/book.js?1425702761" type="text/javascript"></script>
+  <link href="css/styles.css?1425702761" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body style='padding-top: 100px'>
+  <form id='configure_book'>
+    <div id='configurator'>
+      <div id='config_form'>
+        <p>
+          <label for='size'>Size</label>
+          <br>
+          <select id='size'>
+            <option value='-select-'>-select-</option>
+            <option value='twelve-twelve'>12x12"</option>
+            <option value='ten-ten'>10x10"</option>
+            <option value='eight-eight'>8x8"</option>
+            <option value='ten-fifteen'>10x15"</option>
+            <option value='eight-twelve'>8x12"</option>
+            <option value='six-nine'>6x9"</option>
+            <option value='fifteen-ten'>15x10"</option>
+            <option value='twelve-eight'>12x8"</option>
+            <option selected='selected' value='nine-six'>9x6"</option>
+            <option value='fourteen-eleven'>14x11"</option>
+            <option value='eleven-fourteen'>11x14"</option>
+            <option value='twelve-nine'>12x9"</option>
+            <option value='nine-twelve'>9x12"</option>
+            <option value='ten-eight'>10x8"</option>
+            <option value='eight-ten'>8x10"</option>
+          </select>
+        </p>
+        <p>
+          <label for='leather'>Leather</label>
+          <br>
+          <select id='leather'>
+            <option value='-color-'>-color-</option>
+            <option selected='selected' value='leather_color_black'>Black</option>
+            <option value='leather_color_grey'>Grey</option>
+            <option value='leather_color_red'>Red</option>
+            <option value='leather_color_brown'>Brown</option>
+          </select>
+        </p>
+        <p>
+          <label for='gilding_color'>Gilding</label>
+          <br>
+          <select id='gilding_color'>
+            <option value='-color-'>-color-</option>
+            <option value='gilding_color_black'>Black</option>
+            <option value='gilding_color_copper'>Copper</option>
+            <option value='gilding_color_silver'>Silver</option>
+            <option selected='selected' value='gilding_color_natural'>(natural paper)</option>
+          </select>
+        </p>
+        <p>
+          <label for='text_color'>Cover Text</label>
+          <br>
+          <select id='text_color'>
+            <option value='-color-'>-color-</option>
+            <option value='text_color_black'>Black</option>
+            <option value='text_color_copper'>Copper</option>
+            <option selected='selected' value='text_color_silver'>Silver</option>
+            <option value='text_color_blind'>(leather deboss)</option>
+          </select>
+          <br>
+          <input id='cover_text_line1' maxlength='40' placeholder='Line 1' type='text'>
+          <br>
+          <input id='cover_text_line2' maxlength='40' placeholder='Line 2' type='text'>
+        </p>
+        <p>
+          <nav id='flip'>
+            <div>
+              <span class='active' href='#' id='front_flip'>Front</span>
+              <span href='#' id='back_flip'>Back</span>
+            </div>
+          </nav>
+        </p>
+      </div>
+      <div id='config_preview'>
+        <div class='leather_color_black text_color_silver gilding_color_natural nine-six' id='album_preview'>
+          <div id='cube'>
+            <div id='front_face'>
+              <div class='text_font_modern color_silver' id='cover_text'>
+                <span id='line-1'></span>
+                <span id='line-2'></span>
+              </div>
+            </div>
+            <div id='top_face'></div>
+            <div id='left_face'></div>
+            <div id='bottom_face'></div>
+            <div id='bottom_shadow'></div>
+            <div id='back_face'></div>
+            <div id='right_face'></div>
+          </div>
+        </div>
+      </div>
+      <div class='clear'></div>
+    </div>
+  </form>
+</body>
+}
