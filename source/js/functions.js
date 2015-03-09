@@ -50,13 +50,6 @@ jQuery(document).ready(function($){
     $("#album_preview, #trim_preview").addClass( $size );
   });
 
-  // FOR NOW, ALL BOOKS WILL SHOW THE SAME THICKNESS (RE: https://basecamp.com/1823259/projects/1148095-ae-physical-book/todos/89859482-choose-page)
-  // $("select#pages").change(function() {
-  //   var $page = $("select#pages").val();
-  //   $("#album_preview").removeClass('fifteen-pages twenty-pages twenty-five-pages thirty-pages thirty-five-pages forty-pages');
-  //   $("#album_preview").addClass( $page );
-  // });
-
   // when text color is changed, update the preview
   $("select#text_color").change(function() {
     var $color = $("select#text_color").val();
